@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 保持视口高度 */
+    margin: 0;
+    font-size: 30px;
+    background-color: rgb(123, 161, 161);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    text-align: center; /* 将主内容区域的文本在水平方向上居中 */
+}
+
+section {
+    margin-top: 50px; /* 调整垂直方向上的间距 */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 30%;
+    border: 5px solid black;
+}
+
+#p1 {
+    font-weight: bold;
+}
+
+.link {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    line-height: 50px;
+}
+
+.link li {
+    margin-bottom: 10px; /* 调整垂直方向上的间距 */
+}
+
+.link a {
+    text-decoration: none;
+    color: black; /* 超链接文本颜色 */
+    
+}
+
+/*.link a:hover {
+    text-decoration: underline;
+    border: 1px solid black;
+}*/
+
+.link li:hover {
+    border: 1px solid rgb(159, 174, 187);
+    border-radius: 20px;
+    background-color: rgb(159, 174, 187);
+}
