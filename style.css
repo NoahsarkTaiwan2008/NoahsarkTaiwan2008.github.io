@@ -79,3 +79,23 @@ img {
 #download_button:hover {
     background-color: rgb(87, 131, 131);
 }
+
+.link_button {
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(123, 161, 161);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block; 
+    margin-top: 10px; 
+}
+
+.link_button:hover {
+    background-color: rgb(87, 131, 131);
+}
