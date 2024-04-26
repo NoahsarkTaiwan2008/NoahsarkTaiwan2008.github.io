@@ -6,6 +6,14 @@ export default defineConfig({
   description: "Hello.",
   lang: "en_us",
   head: [['link', { rel: 'icon', href: '/images/favicon.ico' }]],
+  lastUpdated: {
+    text: "最後更新於 ",
+    formatOptions: {
+      dateStyle: "full",
+      timeStyle: "medium"
+    }
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
