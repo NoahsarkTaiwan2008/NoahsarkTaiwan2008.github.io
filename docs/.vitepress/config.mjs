@@ -18,9 +18,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
 
     footer: {
-      message: '使用 <a href="https://vitepress.dev/">VitePress</a> 製作',
+      message: '使用 <a href="https://vitepress.dev/" target="_blank">VitePress</a> 製作',
       copyright: 'Copyright © 2024 NoahsarkTaiwan'
-    },
+    },    
 
     collapsed: false,
     base: "https://noahsarktaiwan2008.github.io/",
