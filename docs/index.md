@@ -8,18 +8,8 @@ hero:
   tagline: owo
   actions:
     - theme: alt
-      text: GitHub
-      link: https://github.com/NoahsarkTaiwan2008
-    - theme: alt
-      text: X
-      link: https://twitter.com/NoahsarkTaiwan
-    - theme: alt
-      text: YouTube
-      link: https://www.youtube.com/channel/UC8obsEVWX05iftvVS7Sz8GQ
-    - theme: alt
-      text: Instagram
-      link: https://www.instagram.com/noahsarktaiwan/
-
+      text: 安裝 VitePress
+      link: /start/
 features:
   - title: 安裝 VitePress
     details: VitePress 簡單教學
