@@ -9,8 +9,14 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2024 NoahsarkTaiwan'
+    },
+
     collapsed: false,
     base: "https://noahsarktaiwan2008.github.io/",
+    
     nav: [
       { text: 'Home', link: '/' },
     ],
