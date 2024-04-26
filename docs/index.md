@@ -8,7 +8,7 @@ hero:
   tagline: owo
   actions:
     - theme: brand
-      text: 安裝VitePress
+      text: 安裝 VitePress
       link: /start/
     - theme: alt
       text: ZeroJudge

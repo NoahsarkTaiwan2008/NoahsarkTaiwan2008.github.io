@@ -4,6 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "NoahsarkTaiwan's website",
   description: "Hello.",
+  lang: "en_us",
+  head: [['link', { rel: 'icon', href: '/images/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
