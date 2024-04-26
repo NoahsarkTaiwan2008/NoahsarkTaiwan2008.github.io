@@ -7,16 +7,25 @@ hero:
   text: "Hello."
   tagline: owo
   actions:
-    - theme: brand
-      text: 安裝 VitePress
-      link: /start/
     - theme: alt
-      text: ZeroJudge
-      link: /zerojudge/
+      text: GitHub
+      link: https://github.com/NoahsarkTaiwan2008
+    - theme: alt
+      text: X
+      link: https://twitter.com/NoahsarkTaiwan
+    - theme: alt
+      text: YouTube
+      link: https://www.youtube.com/channel/UC8obsEVWX05iftvVS7Sz8GQ
+    - theme: alt
+      text: Instagram
+      link: https://www.instagram.com/noahsarktaiwan/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-
+  - title: 安裝 VitePress
+    details: VitePress 簡單教學
+    link: /start/
+  - title: ZeroJudge
+    details: ZeroJudge 解題紀錄
+    link: /zerojudge/
 ---
 
