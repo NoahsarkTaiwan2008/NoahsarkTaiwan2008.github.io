@@ -10,13 +10,13 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: '使用 <a href="https://vitepress.dev/">VitePress</a> 製作',
       copyright: 'Copyright © 2024 NoahsarkTaiwan'
     },
 
     collapsed: false,
     base: "https://noahsarktaiwan2008.github.io/",
-    
+
     nav: [
       { text: 'Home', link: '/' },
     ],
@@ -61,7 +61,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/noahsarktaiwan2008' }
+      { icon: 'github', link: 'https://github.com/NoahsarkTaiwan2008/NoahsarkTaiwan2008.github.io' }
     ]
   }
 })
