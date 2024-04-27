@@ -13,7 +13,7 @@ hero:
 features:
   - title: 安裝 VitePress
     icon:
-      src: "/images/vitepress.svg"
+      src: /images/vitepress.svg
     details: VitePress 簡單教學
     link: /start/
 
