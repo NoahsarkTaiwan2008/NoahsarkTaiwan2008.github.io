@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a,a2 as r}from"./chunks/framework.B8NZFltm.js";const m=JSON.parse('{"title":"安裝","description":"","frontmatter":{},"headers":[],"relativePath":"start/install.md","filePath":"start/install.md"}'),s={name:"start/install.md"},o=r("",6),n=[o];function l(i,_,c,d,p,h){return a(),e("div",null,n)}const u=t(s,[["render",l]]);export{m as __pageData,u as default};
