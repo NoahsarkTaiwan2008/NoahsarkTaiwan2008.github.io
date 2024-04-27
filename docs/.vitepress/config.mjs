@@ -22,7 +22,7 @@ export default defineConfig({
       copyright: 'Copyright © 2024 NoahsarkTaiwan'
     },    
 
-    collapsed: false,
+    
     base: "https://noahsarktaiwan2008.github.io/",
 
     nav: [
@@ -50,6 +50,7 @@ export default defineConfig({
         },
         {
           text: "A",
+          collapsed: false,
           items: [
             {text: "a001. 哈囉", link: "/zerojudge/A/a001"},
             {text: "a002. 簡易加法", link: "/zerojudge/A/a002"},
@@ -60,8 +61,24 @@ export default defineConfig({
         },
         {
           text: "B",
+          collapsed: false,
           items: [
             {text: "b294. 經濟大恐荒", link: "/zerojudge/B/b294"},
+          ]
+        }
+      ],
+      
+      "/mc_server": [ // mc_server 資料夾的內容
+        {
+          text: "Minecraft 伺服器架設",
+          items: [
+            {text: "minecraft 伺服器", link: "/mc_server/"},
+          ]
+        },
+        {
+          text: "Forge",
+          items: [
+            {text: "Forge", link: "/mc_server/forge/"}
           ]
         }
       ]
