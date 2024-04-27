@@ -34,7 +34,7 @@
 - **`user_jvm_args.txt`** : 用來設定伺服器的記憶體大小。
 
 ::: tip
-如果你的作業系統不是**Linux**或**macOS**，可以將`run.sh`刪除。
+如果你的作業系統不是 **Linux** 或 **macOS** ，可以將`run.sh`刪除。
 :::
 
 如果不想要讓伺服器開啟圖形化介面占用資源，可以編輯`run.bat`，在
@@ -68,7 +68,7 @@ pause
 
 當記錄檔跳出`Done (37.431s)! For help, type "help"`時，代表伺服器已經成功開啟。
 
-::: warning
+::: warning 注意
 在遊玩伺服器的期間，不要把cmd關閉，一旦cmd被關閉，伺服器就會關閉。
 :::
 
@@ -86,7 +86,7 @@ pause
 
 但其實只要設定`Xmx`的量就可以了
 
-::: warning
+::: warning 注意
 修改完成後記得儲存。
 :::
 
