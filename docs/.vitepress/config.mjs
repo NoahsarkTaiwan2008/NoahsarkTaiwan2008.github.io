@@ -19,9 +19,9 @@ export default defineConfig({
 
     logo: "/images/img.png",
 
-    /*search: {
+    search: {
       provider: 'local'
-    },*/
+    },
 
     footer: {
       message: '使用 <a href="https://vitepress.dev/" target="_blank">VitePress</a> 製作',
