@@ -78,6 +78,7 @@ export default defineConfig({
         {
           text: "Forge",
           items: [
+            {text: "forge伺服器簡介", link: "/mc_server/forge/forge"},
             {text: "高於1.16.5的版本", link: "/mc_server/forge/hv"},
             {text: "低於1.17的版本", link: "/mc_server/forge/lv"},
           ]
@@ -85,7 +86,19 @@ export default defineConfig({
         {
           text: "Fabric",
           items: [
-            {text: "fabric伺服器架設", link: "/mc_server/fabric/index"},
+            {text: "fabric伺服器架設", link: "/mc_server/fabric/fabric"},
+          ]
+        },
+        {
+          text: "Paper",
+          items: [
+            {text: "paper伺服器架設", link: "/mc_server/paper/paper"},
+          ]
+        },
+        {
+          text: "Join server",
+          items: [
+            {text: "伺服器連線方式", link: "mc_server/joining_server/join"}
           ]
         }
       ]
