@@ -17,6 +17,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
+    logo: "/images/img.png",
+
     footer: {
       message: '使用 <a href="https://vitepress.dev/" target="_blank">VitePress</a> 製作',
       copyright: 'Copyright © 2024 NoahsarkTaiwan'

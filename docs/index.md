@@ -12,13 +12,20 @@ hero:
       link: /start/
 features:
   - title: 安裝 VitePress
+    icon:
+      src: /images/vitepress.svg
     details: VitePress 簡單教學
     link: /start/
+
   - title: ZeroJudge
+    icon: 
+      src: /images/zerojudge.svg
     details: ZeroJudge 解題紀錄
     link: /zerojudge/
+
   - title: Minecraft 伺服器架設
+    icon:
+      src: /images/minecraft.webp
     details: Forge、Fabric、Paper 伺服器的架設方法，以及連線方法。
     link: /mc_server/
 ---
-

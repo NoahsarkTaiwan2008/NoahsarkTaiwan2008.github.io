@@ -51,7 +51,7 @@ if %ERRORLEVEL% NEQ 0 (
     goto :exit
 )
 
-java @libraries/net/minecraftforge/forge/1.20.4-49.0.49/win_args.txt %* nogui
+java @libraries/net/minecraftforge/forge/1.20.4-49.0.49/win_args.txt %* nogui // [!code focus]
 
 :exit
 pause
