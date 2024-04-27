@@ -78,7 +78,14 @@ export default defineConfig({
         {
           text: "Forge",
           items: [
-            {text: "Forge", link: "/mc_server/forge/"}
+            {text: "高於1.16.5的版本", link: "/mc_server/forge/hv"},
+            {text: "低於1.17的版本", link: "/mc_server/forge/lv"},
+          ]
+        },
+        {
+          text: "Fabric",
+          items: [
+            {text: "fabric伺服器架設", link: "/mc_server/fabric/index"},
           ]
         }
       ]
