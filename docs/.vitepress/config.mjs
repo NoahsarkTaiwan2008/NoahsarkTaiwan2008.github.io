@@ -27,7 +27,6 @@ export default defineConfig({
       message: '使用 <a href="https://vitepress.dev/" target="_blank">VitePress</a> 製作',
       copyright: 'Copyright © 2024 NoahsarkTaiwan'
     },    
-
     
     base: "https://noahsarktaiwan2008.github.io/",
 
