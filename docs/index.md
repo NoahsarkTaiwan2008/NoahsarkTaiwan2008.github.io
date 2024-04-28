@@ -15,11 +15,8 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Minecraft伺服器架設
+    details: Forge、Fabric、Paper伺服器的架設教學
+    link: /mc_server/
 ---
 
