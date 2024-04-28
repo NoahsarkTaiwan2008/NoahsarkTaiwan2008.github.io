@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "NoahsarkTaiwan's website",
   description: "A VitePress Site",
-  //base: 'https://noahsarktaiwan2008.github.io/',
+  base: '/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
