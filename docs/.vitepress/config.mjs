@@ -9,6 +9,10 @@ export default defineConfig({
 
     logo: "img.png",
 
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
