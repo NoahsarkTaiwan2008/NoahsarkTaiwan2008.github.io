@@ -15,7 +15,6 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
     ],
 
     sidebar: [
@@ -29,7 +28,11 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/NoahsarkTaiwan2008/' },
+      { icon: 'github', link: 'https://github.com/NoahsarkTaiwan2008/NoahsarkTaiwan2008.github.io'},
+      { icon: 'twitter', link: 'https://twitter.com/NoahsarkTaiwan' },
+      { icon: 'youtube', link: 'https://www.youtube.com/channel/UC8obsEVWX05iftvVS7Sz8GQ' },
+      { icon: 'instagram', link: 'https://www.instagram.com/noahsarktaiwan/' },
     ]
   }
 })
