@@ -5,7 +5,7 @@ export default defineConfig({
   title: "NoahsarkTaiwan's website",
   description: "Hello.",
   lang: "en_us",
-  head: [['link', { rel: 'icon', href: '/images/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/public/favicon.ico' }]],
   lastUpdated: {
     text: "最後更新於 ",
     formatOptions: {
@@ -17,7 +17,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: "/image/img.png",
+    logo: "/public/img.png",
 
     search: {
       provider: 'local'
