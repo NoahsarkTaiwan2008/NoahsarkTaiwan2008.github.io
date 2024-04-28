@@ -2,16 +2,21 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
+  title: "NoahsarkTaiwan's website",
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+    footer: {
+      message: '使用 <a href="https://vitepress.dev/">VitePress</a> 製作',
+      copyright: 'Copyright © 2024 NoahsarkTaiwan'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
     ],
 
     sidebar: {
-      // 当用户位于 `guide` 目录时，会显示此侧边栏
       '/mc_server/': [
         {
           text: 'Minecraft 伺服器架設教學',
