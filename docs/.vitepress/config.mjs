@@ -17,7 +17,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: "/images/img.png",
+    logo: "/image/img.png",
 
     search: {
       provider: 'local'
