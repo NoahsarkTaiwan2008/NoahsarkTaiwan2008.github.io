@@ -11,7 +11,7 @@ export default defineConfig({
   markdown: {
     math: true
   },
-  
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
@@ -64,6 +64,14 @@ export default defineConfig({
           text: '三角函數',
           items: [
             { text: '三角函數的筆記', link: '/trig_func/' }
+          ]
+        }
+      ],
+      '/digital_design/': [
+        {
+          text: '數位邏輯設計',
+          items: [
+            { text: '數位邏輯設計的筆記', link: '/digital_design/' }
           ]
         }
       ]
