@@ -8,11 +8,11 @@ hero:
   tagline: ヾ(•ω•`)o"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 三角函數筆記
+      link: /trig_func/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 數位邏輯設計筆記
+      link: /digital_design/
 
 features:
   - title: Minecraft伺服器架設
