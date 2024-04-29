@@ -18,5 +18,8 @@ features:
   - title: Minecraft伺服器架設
     details: Forge、Fabric、Paper伺服器的架設教學
     link: /mc_server/
+  - title: 三角函數筆記
+    details: 三角函數的筆記
+    link: /trig_func/
 ---
 

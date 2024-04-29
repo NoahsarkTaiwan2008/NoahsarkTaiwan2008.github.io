@@ -3,8 +3,15 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "NoahsarkTaiwan's website",
+
   description: "A VitePress Site",
+
   base: '/',
+
+  markdown: {
+    math: true
+  },
+  
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
@@ -52,6 +59,14 @@ export default defineConfig({
           ]
         }
       ],
+      '/trig_func/': [
+        {
+          text: '三角函數',
+          items: [
+            { text: '三角函數的筆記', link: '/trig_func/' }
+          ]
+        }
+      ]
     },
 
     socialLinks: [
