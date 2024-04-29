@@ -15,6 +15,14 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+
     footer: {
       message: '使用 <a href="https://vitepress.dev/" target="blank_">VitePress</a> 製作',
       copyright: 'Copyright © 2024 NoahsarkTaiwan'

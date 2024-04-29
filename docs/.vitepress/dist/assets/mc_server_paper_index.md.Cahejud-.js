@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as t}from"./chunks/framework.CFgrr6nf.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"mc_server/paper/index.md","filePath":"mc_server/paper/index.md"}'),a={name:"mc_server/paper/index.md"};function n(s,c,o,p,d,i){return t(),r("div")}const f=e(a,[["render",n]]);export{m as __pageData,f as default};
