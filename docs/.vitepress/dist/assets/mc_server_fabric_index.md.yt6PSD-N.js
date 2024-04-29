@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t}from"./chunks/framework.m_e3FNeJ.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"mc_server/fabric/index.md","filePath":"mc_server/fabric/index.md"}'),a={name:"mc_server/fabric/index.md"};function c(n,s,i,o,d,_){return t(),r("div")}const p=e(a,[["render",c]]);export{f as __pageData,p as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./chunks/framework.m_e3FNeJ.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"mc_server/join/index.md","filePath":"mc_server/join/index.md"}'),n={name:"mc_server/join/index.md"};function a(o,s,c,i,d,_){return r(),t("div")}const f=e(n,[["render",a]]);export{p as __pageData,f as default};
