@@ -1,6 +1,6 @@
 # 邏輯閘
 
-> 圖片及部分內容取自[geeksforgeeks](https://www.geeksforgeeks.org/logic-gates/?ref=lbp)
+> 圖片及部分內容取自[geeksforgeeks](https://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/?ref=lbp)
 
 ## AND gate (及閘)
 
