@@ -6,6 +6,8 @@ export default defineConfig({
 
   description: "A VitePress Site",
 
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+
   base: '/',
 
   markdown: {
@@ -14,6 +16,8 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+    logo: '/profile_picture.jpg',
 
     lastUpdated: {
       text: 'Updated at',
