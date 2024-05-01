@@ -16,7 +16,7 @@ $$Ans = -\sqrt{3}$$
 
 $$\sin\frac{3\pi}{2}$$
 
-$$\Rightarrow \frac{3\pi}{3}×\frac{180}{\pi}=270$$
+$$\Rightarrow \frac{3\pi}{2}×\frac{180}{\pi}=270$$
 
 $$\Rightarrow 360-270=90$$
 
