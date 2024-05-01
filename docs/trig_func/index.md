@@ -8,9 +8,9 @@ $$\Rightarrow -240 + 360 = 120$$
 
 120位於第二象限
 
-$$\Rightarrow \frac{\sqrt{3}}{1}=\sqrt{3}$$
+$$\Rightarrow \frac{-\sqrt{3}}{1}=-\sqrt{3}$$
 
-$$Ans = \sqrt{3}$$
+$$Ans = -\sqrt{3}$$
 
 ---
 
