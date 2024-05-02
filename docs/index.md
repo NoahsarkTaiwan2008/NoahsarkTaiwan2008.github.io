@@ -17,18 +17,18 @@ hero:
 features:
   - title: Minecraft伺服器架設
     icon:
-      src: /Grass_Block_JE7_BE6.png
+      src: /images/Grass_Block_JE7_BE6.png
     details: Forge、Fabric、Paper伺服器的架設教學
     link: /mc_server/
   - title: 三角函數筆記
     icon:
-      src: /trigonometry.png
+      src: /images/trigonometry.png
     details: 三角函數的筆記
     link: /trig_func/
   - title: 數位邏輯設計筆記
     icon:
-      dark: /wpf--integrated-circuit-white.svg
-      light: /wpf--integrated-circuit-black.svg
+      dark: /images/wpf--integrated-circuit-white.svg
+      light: /images/wpf--integrated-circuit-black.svg
     details: 數位邏輯設計的筆記
     link: /digital_design/
 ---
