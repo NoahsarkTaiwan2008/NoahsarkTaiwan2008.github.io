@@ -6,7 +6,22 @@ export default defineConfig({
 
   description: "A VitePress Site",
 
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=GTM-5CMXCHDV' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GTM-5CMXCHDV');`
+    ]
+  ],
+  
 
   base: '/',
 
