@@ -116,7 +116,7 @@ export default defineConfig({
           items: [
             { text: 'a001. 哈囉', link: '/zerojudge/A/a001' },
             { text: 'a002. 簡易加法', link: '/zerojudge/A/a002' },
-            
+            { text: 'a003. 兩光法師占卜術', link: '/zerojudge/A/a003' },
           ]
         }
       ]
