@@ -127,6 +127,10 @@ export default defineConfig({
         },
         {
           text: 'B',
+          collapsed: true,
+          items: [
+            { text: 'b970. 我不說髒話 (續)', link: '/zerojudge/B/b970' }
+          ]
         },
         {
           text: 'C',
