@@ -103,6 +103,20 @@ export default defineConfig({
             { text: '卡諾圖', link: '/digital_design/kmap' }
           ]
         }
+      ],
+      '/zerojudge/': [
+        {
+          text: 'zerojudge',
+          items: [
+            { text: 'zerojudge解題紀錄', link: '/zerojudge/' }
+          ]
+        },
+        {
+          text: 'A',
+          items: [
+            { text: 'a001', link: '/zerojudge/A/a001' },
+          ]
+        }
       ]
     },
 

@@ -31,5 +31,10 @@ features:
       light: /images/wpf--integrated-circuit-black.svg
     details: 數位邏輯設計的筆記
     link: /digital_design/
+  - title: zerojudge
+    icon:
+      src: /images/zerojudge_icon.svg
+    details: zerojudge解題紀錄
+    link: /zerojudge/
 ---
 
