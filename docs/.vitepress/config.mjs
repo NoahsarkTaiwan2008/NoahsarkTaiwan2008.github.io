@@ -124,6 +124,33 @@ export default defineConfig({
             { text: 'a003. 兩光法師占卜術', link: '/zerojudge/A/a003' },
             { text: 'a004. 文文的求婚', link: '/zerojudge/A/a004' },
           ]
+        },
+        {
+          text: 'B',
+        },
+        {
+          text: 'C',
+        },
+        {
+          text: 'D',
+        },
+        {
+          text: 'E',
+        },
+        {
+          text: 'F',
+        },
+        {
+          text: 'G',
+        },
+        {
+          text: 'H',
+        },
+        {
+          text: 'I',
+        },
+        {
+          text: 'K'
         }
       ]
     },
