@@ -141,6 +141,10 @@ export default defineConfig({
         },
         {
           text: 'D',
+          collapsed: true,
+          items: [
+            { text: 'd461. 班際籃球賽', link: '/zerojudge/D/d461' }
+          ]
         },
         {
           text: 'E',
