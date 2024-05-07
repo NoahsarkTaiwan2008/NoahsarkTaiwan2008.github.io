@@ -32,6 +32,10 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
+    search: {
+      provider: 'local'
+    },
+
     logo: '/profile_picture.jpg',
 
     lastUpdated: {
