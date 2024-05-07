@@ -134,6 +134,10 @@ export default defineConfig({
         },
         {
           text: 'C',
+          collapsed: true,
+          items: [
+            { text: 'c379. 成為出題者', link: '/zerojudge/C/c379' }
+          ]
         },
         {
           text: 'D',
