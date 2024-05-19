@@ -104,7 +104,8 @@ export default defineConfig({
           items: [
             { text: '數位邏輯設計的筆記', link: '/digital_design/' },
             { text: '邏輯閘', link: '/digital_design/logic_gate' },
-            { text: '卡諾圖', link: '/digital_design/kmap' }
+            { text: '卡諾圖', link: '/digital_design/kmap' },
+            { text: '狀態表', link: '/digital_design/a1' }
           ]
         }
       ],
