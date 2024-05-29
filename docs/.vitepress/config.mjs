@@ -94,7 +94,8 @@ export default defineConfig({
         {
           text: '三角函數',
           items: [
-            { text: '三角函數的筆記', link: '/trig_func/' }
+            { text: '三角函數的筆記', link: '/trig_func/' },
+            { text: '和差角公式', link: '/trig_func/asadi.md' }
           ]
         }
       ],
