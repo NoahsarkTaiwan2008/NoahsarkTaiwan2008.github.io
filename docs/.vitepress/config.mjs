@@ -86,7 +86,7 @@ export default defineConfig({
         {
           text: 'Join Server',
           items: [
-            { text: '加入伺服器，以及連線方式', link: '/mc_server/join/'}
+            { text: '加入伺服器，以及連線方式', link: '/mc_server/join.md'}
           ]
         }
       ],
