@@ -22,7 +22,6 @@ export default defineConfig({
     ]
   ],
   
-
   base: '/',
 
   markdown: {
@@ -86,7 +85,7 @@ export default defineConfig({
         {
           text: 'Join Server',
           items: [
-            { text: '加入伺服器，以及連線方式', link: '/mc_server/join.md'}
+            { text: '加入伺服器，以及連線方式', link: '/mc_server/join'}
           ]
         }
       ],
@@ -166,17 +165,20 @@ export default defineConfig({
         {
           text: 'K'
         }
+      ],
+      '/fabric_modding/': [
+        {
+          text: 'Fabric模組製作',
+          items: [
+            { text: '開發環境', link: '/fabric_modding/' },
+            { text: '模組模板生成器', link: '/fabric_modding/Template-mod-generator.md' },
+            { text: '初始設定', link: '/fabric_modding/initial-settings' },
+            { text: '開始!', link: '/fabric_modding/start' },
+            { text: '新增物品', link: '/fabric_modding/add-items' },
+          ]
+        }
       ]
     },
-    '/fabric_modding/': [
-      {
-        text: 'Fabric模組製作',
-        items: [
-          { text: '開發環境', link: '/digital_design/index' },
-        ]
-      }
-    ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/NoahsarkTaiwan2008' },
       { icon: 'x', link: 'https://twitter.com/NoahsarkTaiwan' },
