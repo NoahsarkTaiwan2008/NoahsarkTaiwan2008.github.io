@@ -168,6 +168,14 @@ export default defineConfig({
         }
       ]
     },
+    '/fabric_modding/': [
+      {
+        text: 'Fabric模組製作',
+        items: [
+          { text: '開發環境', link: '/digital_design/index' },
+        ]
+      }
+    ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/NoahsarkTaiwan2008' },

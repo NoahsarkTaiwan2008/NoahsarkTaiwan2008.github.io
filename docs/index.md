@@ -34,5 +34,10 @@ features:
   - title: zerojudge
     details: zerojudge解題紀錄
     link: /zerojudge/
+  - title: Fabric模組製作
+    icon:
+      src: /images/fabric.png
+    details: Fabric的模組製作教學
+    link: /fabric_modding/
 ---
 
