@@ -1233,7 +1233,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #2fffff;
+  background: #fff466;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -1669,7 +1669,6 @@ pre code {
 }
 .back-to-top span {
   margin-right: 8px;
-  display: none;
 }
 .back-to-top .fa {
   text-align: center;
@@ -1693,6 +1692,16 @@ pre code {
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
+}
+.reading-progress-bar {
+  --progress: 0;
+  background: #212e6b;
+  height: 5px;
+  position: fixed;
+  z-index: 50;
+  width: var(--progress);
+  left: 0;
+  bottom: 0;
 }
 .rtl.post-body p,
 .rtl.post-body a,
