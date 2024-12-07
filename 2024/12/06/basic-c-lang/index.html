@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cascadia+Mono:300,300italic,400,400italic,700,700italic%7CNoto+Sans+Mono+CJK+TC:300,300italic,400,400italic,700,700italic%7CSource+Han+Mono:300,300italic,400,400italic,700,700italic%7CPingFang+TC:300,300italic,400,400italic,700,700italic%7Cmonospace:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"noahsarktw.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一個簡單的C語言教學。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基礎C語言">
+<meta property="og:url" content="https://noahsarktw.com/2024/12/06/basic-c-lang/index.html">
+<meta property="og:site_name" content="Hikari&#39;s Blog">
+<meta property="og:description" content="一個簡單的C語言教學。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic.png?raw=true">
+<meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic2.png?raw=true">
+<meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic3.png?raw=true">
+<meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic4.png?raw=true">
+<meta property="article:published_time" content="2024-12-05T18:09:07.000Z">
+<meta property="article:modified_time" content="2024-12-07T14:42:17.541Z">
+<meta property="article:author" content="Hikari">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="程式">
+<meta property="article:tag" content="教學">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic.png?raw=true">
+
+
+<link rel="canonical" href="https://noahsarktw.com/2024/12/06/basic-c-lang/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://noahsarktw.com/2024/12/06/basic-c-lang/","path":"2024/12/06/basic-c-lang/","title":"基礎C語言"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>基礎C語言 | Hikari's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hikari's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">開發環境設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E4%BB%A5MinGW%E8%88%89%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">windows(以MinGW舉例)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">1.2.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian-%E7%B3%BB%E5%88%97-Linux-%E7%99%BC%E8%A1%8C%E7%89%88%EF%BC%88%E5%A6%82-Ubuntu%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">Debian 系列 Linux 發行版（如 Ubuntu）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%AF%E6%AA%94%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">副檔名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E9%A0%AD%E6%AA%94"><span class="nav-number">3.</span> <span class="nav-text">標頭檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E5%8F%A3%E9%BB%9E%E5%87%BD%E5%BC%8Fmain"><span class="nav-number">4.</span> <span class="nav-text">入口點函式main()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%88%87%E8%BC%B8%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">輸出與輸入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#printf-%E5%87%BD%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">printf()函式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-%E8%BC%B8%E5%87%BA%E6%96%87%E5%AD%97"><span class="nav-number">5.1.1.</span> <span class="nav-text">範例: 輸出文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-%E8%BC%B8%E5%87%BA%E8%AE%8A%E6%95%B8%E5%80%BC"><span class="nav-number">5.1.2.</span> <span class="nav-text">範例: 輸出變數值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scanf-%E5%87%BD%E5%BC%8F"><span class="nav-number">5.2.</span> <span class="nav-text">scanf()函式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-%E8%BC%B8%E5%85%A5%E6%95%B8%E5%80%BC"><span class="nav-number">5.2.1.</span> <span class="nav-text">範例: 輸入數值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">6.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">6.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bool"><span class="nav-number">6.2.</span> <span class="nav-text">bool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%94%E4%BD%8D%E7%AC%A6"><span class="nav-number">6.3.</span> <span class="nav-text">佔位符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-else%E5%88%A4%E6%96%B7%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">if else判斷式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">7.1.</span> <span class="nav-text">比較運算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">7.2.</span> <span class="nav-text">邏輯運算子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%B4%E5%9C%88"><span class="nav-number">8.</span> <span class="nav-text">迴圈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for"><span class="nav-number">8.1.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">8.2.</span> <span class="nav-text">while</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%AA%E6%98%8E"><span class="nav-number">8.2.1.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">8.2.2.</span> <span class="nav-text">範例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#break%E8%B7%9Fcontinue"><span class="nav-number">8.3.</span> <span class="nav-text">break跟continue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break"><span class="nav-number">8.3.1.</span> <span class="nav-text">break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue"><span class="nav-number">8.3.2.</span> <span class="nav-text">continue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%A3%E5%88%97"><span class="nav-number">9.</span> <span class="nav-text">陣列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%B6%AD%E9%99%A3%E5%88%97"><span class="nav-number">9.1.</span> <span class="nav-text">多維陣列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">函式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E5%BC%8F%E5%8F%83%E6%95%B8"><span class="nav-number">10.1.</span> <span class="nav-text">函式參數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E6%95%B8%E5%9B%9E%E5%82%B3"><span class="nav-number">10.1.1.</span> <span class="nav-text">參數回傳</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hikari</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/NoahsarkTaiwan2008" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;NoahsarkTaiwan2008" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/NoahsarkTaiwan" title="X → https:&#x2F;&#x2F;x.com&#x2F;NoahsarkTaiwan" rel="noopener me" target="_blank"><i class="fab fa-x-twitter fa-fw"></i>X</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/@noahsarktaiwan" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;@noahsarktaiwan" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://noahsarktaiwan2008.github.io/" title="Website → https:&#x2F;&#x2F;noahsarktaiwan2008.github.io" rel="noopener me" target="_blank"><i class="fas fa-globe fa-fw"></i>Website</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noahsarktw.com/2024/12/06/basic-c-lang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hikari">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hikari's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="基礎C語言 | Hikari's Blog">
+      <meta itemprop="description" content="一個簡單的C語言教學。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基礎C語言
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發布於</span>
+
+      <time title="創建時間：2024-12-06 02:09:07" itemprop="dateCreated datePublished" datetime="2024-12-06T02:09:07+08:00">2024-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-07 22:42:17" itemprop="dateModified" datetime="2024-12-07T22:42:17+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">一個簡單的C語言教學。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="開發環境設定"><a href="#開發環境設定" class="headerlink" title="開發環境設定"></a>開發環境設定</h1><p>C語言的編譯器是<code>gcc</code>或是<code>clang</code>。<br>開始前，先使用<code>gcc --version</code>檢查之前是否已經安裝過環境。如果出現錯誤，再進行下方的教學。</p>
+<h2 id="windows-以MinGW舉例"><a href="#windows-以MinGW舉例" class="headerlink" title="windows(以MinGW舉例)"></a>windows(以MinGW舉例)</h2><p><em>也可以看<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/cpp/config-mingw">vscode的教學</a></em></p>
+<p>會透過<a target="_blank" rel="noopener" href="https://www.msys2.org/">MSYS2</a>安裝MinGW。<br>從這裡下載<a target="_blank" rel="noopener" href="https://github.com/msys2/msys2-installer/releases/download/2024-01-13/msys2-x86_64-20240113.exe">MinGW的exe安裝檔</a>，或是自己到<a target="_blank" rel="noopener" href="https://www.msys2.org/">MSYS2官網</a>下載</p>
+<p>之後執行這個<code>exe</code>檔，照著安裝精靈的指示安裝(總之一直點確認就可以了，可以把安裝位置改成自己想要的位置)<br>完成後勾選<code>Run MSYS2</code>就可以在點擊<code>Finish</code>後自動開啟一個終端機。(沒勾選就去搜尋<code>MSYS2 CLANG64</code>然後開啟他)<br>在這個終端機內執行以下指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain</span><br></pre></td></tr></table></figure>
+
+<p>出現<code>Enter a selection (default=all)</code>時直接按<code>enter</code>，不用輸入內容。</p>
+<p>之後有任何提示就輸入<code>y</code>，然後按<code>enter</code>。</p>
+<p>安裝完成後要去修改環境變數。<br>在windows搜尋欄輸入<code>環境變數</code>並開啟:<br><img src="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic.png?raw=true" alt="環境變數"></p>
+<p>點擊<strong>環境變數</strong>:<br><img src="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic2.png?raw=true" alt="進入環境變數"></p>
+<p>點擊<strong>使用者變數</strong>的<strong>Path</strong>選項，然後按<strong>編輯</strong>:<br><img src="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic3.png?raw=true" alt="進入path"></p>
+<p>點擊<strong>新增</strong>並把安裝<strong>MinGW</strong>的位置貼上，預設安裝會是<code>C:\msys64\ucrt64\bin</code>，但因為我在安裝時是設定安裝在<code>D:\</code>，所以我設定的位置會是<code>C:\msys64\ucrt64\bin</code>(總之就是你在安裝時選擇安裝在哪裡，就輸入什麼位置)。輸入完成後按<strong>確定</strong>。<br><img src="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic4.png?raw=true" alt="新增環境變數"></p>
+<p>之後就一直點擊<strong>確定</strong>來退出。</p>
+<p>打開終端機輸入指令確認安裝是否成功:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+
+<p>成功會顯示以下內容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\ben&gt; gcc --version</span><br><span class="line">gcc.exe (Rev6, Built by MSYS2 project) 13.1.0</span><br><span class="line">Copyright (C) 2023 Free Software Foundation, Inc.</span><br><span class="line">This is free software; see the <span class="built_in">source</span> <span class="keyword">for</span> copying conditions.  There is NO</span><br><span class="line">warranty; not even <span class="keyword">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br></pre></td></tr></table></figure>
+
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>安裝<strong>XCode</strong>(檔案大)或是<strong>Xcode Command Line Tools</strong>(檔案小)<br>以<strong>Xcode Command Line Tools</strong>舉例:<br>在終端機輸入以下指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+<p>如果沒有權限，在前面加上<code>sudo</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<p>安裝後檢查是否安裝成功:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="Debian-系列-Linux-發行版（如-Ubuntu）"><a href="#Debian-系列-Linux-發行版（如-Ubuntu）" class="headerlink" title="Debian 系列 Linux 發行版（如 Ubuntu）"></a>Debian 系列 Linux 發行版（如 Ubuntu）</h2><p>透過<code>apt</code>安裝:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install gcc</span><br></pre></td></tr></table></figure>
+
+<p>檢查安裝是否成功:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+
+<h1 id="副檔名"><a href="#副檔名" class="headerlink" title="副檔名"></a>副檔名</h1><p>C語言的副檔名為<code>c</code>，例如<code>hello.c</code>。</p>
+<h1 id="標頭檔"><a href="#標頭檔" class="headerlink" title="標頭檔"></a>標頭檔</h1><p>在開始時引入標頭檔(Header file)，例如</p>
+<ul>
+<li><code>stdio.h</code></li>
+<li><code>string.h</code></li>
+<li><code>math.h</code></li>
+</ul>
+<p>引入的時機就是在需要使用這些標頭檔中所定義的函數或變數時。例如，當你需要使用輸入輸出功能時，就需要引入 <code>stdio.h</code>；當你需要進行字串處理時，就需要引入 <code>string.h</code>；當你需要進行數學運算時，就需要引入 <code>math.h</code>。</p>
+<h1 id="入口點函式main"><a href="#入口點函式main" class="headerlink" title="入口點函式main()"></a>入口點函式<code>main()</code></h1><p>幾乎每個程式都會需要<code>main()</code>這個函式。他返回的數值通常是<code>int</code>，所以用<code>int</code>開頭。<br>程式的主要內容會寫在<code>main()</code>函式裡面。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 程式內容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="輸出與輸入"><a href="#輸出與輸入" class="headerlink" title="輸出與輸入"></a>輸出與輸入</h1><p>在C語言中，輸出使用函式 <code>printf()</code>，而輸入則使用函式 <code>scanf()</code>。</p>
+<h2 id="printf-函式"><a href="#printf-函式" class="headerlink" title="printf()函式"></a>printf()函式</h2><p><code>printf()</code> 用於在終端輸出文字或變數的值。</p>
+<h3 id="範例-輸出文字"><a href="#範例-輸出文字" class="headerlink" title="範例: 輸出文字"></a>範例: 輸出文字</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>執行後會在終端顯示：<code>hello world</code>。</p>
+<h3 id="範例-輸出變數值"><a href="#範例-輸出變數值" class="headerlink" title="範例: 輸出變數值"></a>範例: 輸出變數值</h3><p>要輸出變數的值，需要在格式字串中使用佔位符來指定變數型別，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> age = <span class="number">16</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;你%d歲&quot;</span>, age);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上程式會將 <code>age</code> 的值插入到 <code>%d</code> 的位置，輸出結果為：<code>你16歲</code>。</p>
+<h2 id="scanf-函式"><a href="#scanf-函式" class="headerlink" title="scanf()函式"></a>scanf()函式</h2><p><code>scanf()</code> 用於從終端讀取輸入，並將輸入值儲存到指定變數中。</p>
+<h3 id="範例-輸入數值"><a href="#範例-輸入數值" class="headerlink" title="範例: 輸入數值"></a>範例: 輸入數值</h3><p>以下程式讀取使用者的年齡並輸出：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;請輸入你的年齡: &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;age);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;你%d歲&quot;</span>, age);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>執行流程：</p>
+<ol>
+<li>使用者會看到提示 <code>請輸入你的年齡:</code>。</li>
+<li>使用者輸入數值後，<code>scanf()</code> 將數值儲存到變數 <code>age</code> 中。</li>
+<li>輸出顯示輸入的年齡，例如：<code>你18歲</code>。</li>
+</ol>
+<h1 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h1><p>變數是用來儲存資料的命名儲存空間。<br>在 C 語言有幾種常用的變數型態:</p>
+<table>
+<thead>
+<tr>
+<th>型態</th>
+<th>說明</th>
+<th>範例值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>int</code></td>
+<td>整數</td>
+<td>42</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>字元</td>
+<td>‘a’</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>雙精度浮點數</td>
+<td>3.14159</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>單精度浮點數</td>
+<td>3.14</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>布林值，只有true(1)或false(0)</td>
+<td>true(或是1)</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>長整數，範圍比 <code>int</code> 大</td>
+<td>1234567890</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td>更長整數，範圍比 <code>long</code> 大</td>
+<td>9876543210</td>
+</tr>
+<tr>
+<td><code>unsigned</code></td>
+<td>無符號整數，不會有負數，會加在整數型別前，例如 <code>int</code>。</td>
+<td>42</td>
+</tr>
+</tbody></table>
+<p>範例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> number = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> n = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">double</span> number2 = <span class="number">3.1415926</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">float</span> number3 = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> yes = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> bigNumber = <span class="number">9223372036854775807</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> positiveNumber = <span class="number">300</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><em>更詳細的內容請參閱<a target="_blank" rel="noopener" href="https://www.w3schools.com/c/c_strings.php">W3schools</a>的教學</em></p>
+<p>C沒有內建的<code>string</code>變數(但其他程式語言通常會有)，所以在創建字串變數時就需要使用<code>char</code>建立字元<a href="http://noahsarktw.com/2024/12/06/basic-c-lang/#%E9%99%A3%E5%88%97">陣列</a>來代替<code>string</code>。<br>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> hello[] = <span class="string">&quot;hello world&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>注意，一定要用雙引號 <code>&quot;</code> ，不能用單引號 <code>&#39;</code></strong></p>
+<p>輸出字串時，要使用 <code>%s</code> 這個佔位符：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> hello[] = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, hello);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h2><p>C語言在C99之前並沒有內建<code>bool</code>這個型態的變數。不過你可以使用<code>stdbool.h</code>這個函式庫來加入<code>bool</code>變數。或是用<code>_Bool</code>這個型態(限C99和之後的版本)。</p>
+<p>範例(不引入<code>stdbool.h</code>，限C99和之後的版本)：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">_Bool</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="type">_Bool</span> b = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果引入<code>stdbool.h</code>，就可以把<code>bool</code>的值使用<code>true</code>或<code>false</code>來代替<code>1</code>跟<code>0</code>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">bool</span> a = <span class="literal">true</span>;</span><br><span class="line">    <span class="type">bool</span> b = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> c = <span class="number">1</span>;</span><br><span class="line">    <span class="type">bool</span> d = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, c);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="佔位符"><a href="#佔位符" class="headerlink" title="佔位符"></a>佔位符</h2><p>佔位符用在格式化輸出時，指定如何顯示變數的內容。例如，在C語言的<code>printf</code>函式中，我們使用不同的佔位符來表示變數的型態。這些佔位符可以指明數值的格式（如整數、小數點後的位數等）。</p>
+<p>常見佔位符與資料型態：</p>
+<table>
+<thead>
+<tr>
+<th>資料型態</th>
+<th>佔位符</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>int</code></td>
+<td><code>%d</code></td>
+<td>帶符號的十進制整數</td>
+</tr>
+<tr>
+<td><code>unsigned int</code></td>
+<td><code>%u</code></td>
+<td>無符號十進制整數</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>%c</code></td>
+<td>單個字符</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td><code>%lf</code></td>
+<td>雙精度浮點數</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>%f</code></td>
+<td>單精度浮點數（<code>printf</code>中會自動轉為<code>double</code>）</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>%d</code></td>
+<td>布林值（0 表示<code>false</code>，1 表示<code>true</code>）</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td><code>%ld</code></td>
+<td>長整數</td>
+</tr>
+<tr>
+<td><code>unsigned long</code></td>
+<td><code>%lu</code></td>
+<td>無符號長整數</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td><code>%lld</code></td>
+<td>長長整數</td>
+</tr>
+<tr>
+<td><code>unsigned long long</code></td>
+<td><code>%llu</code></td>
+<td>無符號長長整數</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td><code>%hd</code></td>
+<td>短整數</td>
+</tr>
+<tr>
+<td><code>unsigned short</code></td>
+<td><code>%hu</code></td>
+<td>無符號短整數</td>
+</tr>
+<tr>
+<td><code>size_t</code></td>
+<td><code>%zu</code></td>
+<td>無符號大小型別，用於物件大小</td>
+</tr>
+<tr>
+<td><code>int*</code>（指標）</td>
+<td><code>%p</code></td>
+<td>指標地址，以十六進制表示</td>
+</tr>
+<tr>
+<td><code>char*</code>（字串）</td>
+<td><code>%s</code></td>
+<td>字串（以 <code>null</code> 結尾）</td>
+</tr>
+</tbody></table>
+<p>範例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> number = <span class="number">-123</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> positiveNumber = <span class="number">300</span>;</span><br><span class="line">    <span class="type">char</span> letter = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">    <span class="type">double</span> pi = <span class="number">3.14159265358979</span>;</span><br><span class="line">    <span class="type">float</span> smallPi = <span class="number">3.14f</span>;</span><br><span class="line">    <span class="type">bool</span> isTrue = <span class="literal">true</span>;  <span class="comment">// bool的值除了可以用0跟1，也可以用true(代表1)跟false(代表0)來當變數值</span></span><br><span class="line">    <span class="type">long</span> bigNumber = <span class="number">9223372036854775807</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> bigUnsignedNumber = <span class="number">4294967295</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> veryBigNumber = <span class="number">9223372036854775807LL</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> veryBigUnsignedNumber = <span class="number">18446744073709551615ULL</span>;</span><br><span class="line">    <span class="type">short</span> smallNumber = <span class="number">-32000</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">short</span> smallPositiveNumber = <span class="number">65000</span>;</span><br><span class="line">    <span class="type">size_t</span> objectSize = <span class="keyword">sizeof</span>(<span class="type">int</span>);</span><br><span class="line">    <span class="type">char</span>* <span class="built_in">string</span> = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    <span class="type">int</span>* pointer = &amp;number;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;int: %d\n&quot;</span>, number);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;unsigned int: %u\n&quot;</span>, positiveNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;char: %c\n&quot;</span>, letter);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;double: %lf\n&quot;</span>, pi);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;float: %f\n&quot;</span>, smallPi);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bool (as int): %d\n&quot;</span>, isTrue);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bool (as true/false): %s\n&quot;</span>, isTrue ? <span class="string">&quot;true&quot;</span> : <span class="string">&quot;false&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;long: %ld\n&quot;</span>, bigNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;unsigned long: %lu\n&quot;</span>, bigUnsignedNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;long long: %lld\n&quot;</span>, veryBigNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;unsigned long long: %llu\n&quot;</span>, veryBigUnsignedNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;short: %hd\n&quot;</span>, smallNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;unsigned short: %hu\n&quot;</span>, smallPositiveNumber);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;size_t: %zu\n&quot;</span>, objectSize);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;string: %s\n&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;pointer address: %p\n&quot;</span>, pointer);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>輸出結果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int: -123</span><br><span class="line">unsigned int: 300</span><br><span class="line">char: A</span><br><span class="line">double: 3.141593</span><br><span class="line"><span class="built_in">float</span>: 3.140000</span><br><span class="line">bool (as int): 1</span><br><span class="line">bool (as <span class="literal">true</span>/false): <span class="literal">true</span></span><br><span class="line">long: 9223372036854775807</span><br><span class="line">unsigned long: 4294967295</span><br><span class="line">long long: 9223372036854775807</span><br><span class="line">unsigned long long: 18446744073709551615</span><br><span class="line">short: -32000</span><br><span class="line">unsigned short: 65000</span><br><span class="line">size_t: 4</span><br><span class="line">string: Hello, World!</span><br><span class="line">pointer address: 0x7ffeea2db9bc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>浮點數精度控制</strong>：</p>
+<ul>
+<li>可以用格式指定小數點位數，例如：<code>%.2f</code> 表示輸出小數點後兩位數的浮點數。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">float</span> pi = <span class="number">3.14159</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Pi (2 decimals): %.2f\n&quot;</span>, pi); <span class="comment">// 輸出: 3.14</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="if-else判斷式"><a href="#if-else判斷式" class="headerlink" title="if else判斷式"></a><code>if else</code>判斷式</h1><p>用來做兩個值的判斷。<br>例如我有兩個變數，<code>a</code>和<code>b</code>:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<p>我想要判斷這兩者的值是否相同，這時就可以使用<code>if</code>。</p>
+<p><code>if</code>的判斷式會寫在他旁邊的括號裡面。<br>判斷時會使用<strong>比較運算子</strong>和<strong>邏輯運算子</strong>。以下是各種的比較運算子:</p>
+<h2 id="比較運算子"><a href="#比較運算子" class="headerlink" title="比較運算子"></a>比較運算子</h2><table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>說明</th>
+<th>舉例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>==</code></td>
+<td>比較兩個數值是否<strong>相等</strong></td>
+<td><code>a == b</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>比較兩個數值是否<strong>不相等</strong></td>
+<td><code>a != b</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>比較前項數值是否<strong>大於</strong>後項數值</td>
+<td><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>比較前項數值是否<strong>小於</strong>後項數值</td>
+<td><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>比較前項數值是否<strong>大於而且等於</strong>後項數值</td>
+<td><code>a &gt;= b</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>比較前項數值是否<strong>小於而且等於</strong>後項數值</td>
+<td><code>a &lt;= b</code></td>
+</tr>
+</tbody></table>
+<p>範例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">5</span>, b = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `==` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">    <span class="comment">// 這裡不會執行，因為 a 不等於 b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `!=` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 a 不等於 b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `&gt;` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 a 大於 b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `&lt;` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">    <span class="comment">// 這裡不會執行，因為 a 不小於 b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `&gt;=` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &gt;= b) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 a 大於 b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `&lt;=` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &lt;= b) &#123;</span><br><span class="line">    <span class="comment">// 這裡不會執行，因為 a 不小於或等於 b</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h2><p>各種邏輯運算子:</p>
+<table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>說明</th>
+<th>舉例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;&amp;</code></td>
+<td>檢查兩個條件是否都為 <code>true</code></td>
+<td><code>a &gt; b &amp;&amp; a != b</code>，當 <code>a</code> <strong>大於</strong> <code>b</code> 而且 <code>a</code> 也 <strong>不等於</strong> <code>b</code> 時，結果才會是<code>true(1)</code></td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>檢查兩個條件是否至少有一個為 <code>true</code></td>
+<td><code>a &gt; b || a == b</code>，當 <code>a</code> <strong>大於</strong> <code>b</code> 或 <code>a</code> <strong>等於</strong> <code>b</code> 時，結果會是 <code>true(1)</code></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>將條件結果取反，如果為 <code>true</code> 則變為 <code>false</code>，反之亦然</td>
+<td><code>!(a &gt; b)</code>，當 <code>a</code> <strong>不大於</strong> <code>b</code> 時，結果才會是 <code>true(1)</code></td>
+</tr>
+</tbody></table>
+<p>範例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">5</span>, b = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `&amp;&amp;` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &gt; b &amp;&amp; a != b) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 `a &gt; b` 且 `a != b`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `||` 範例</span></span><br><span class="line"><span class="keyword">if</span> (a &gt; b || a == b) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 `a &gt; b`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `!` 範例</span></span><br><span class="line"><span class="keyword">if</span> (!(a &gt; b)) &#123;</span><br><span class="line">    <span class="comment">// 這裡會執行，因為 `a &gt; b` 為 `true`，所以 `!(a &gt; b)` 為 `false`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h1><p>分為<code>for</code>跟<code>while</code>兩種，<code>for</code>會在知道要重複執行幾次時使用，<code>while</code>是在不知道明確重複次數時使用。</p>
+<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><p><code>for</code>的基本語法為:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始變數; 判斷式; 遞增式) &#123;</span><br><span class="line">    <span class="comment">// 內容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>for</code> 迴圈的語法中，<code>初始變數; 判斷式; 遞增式</code> 分別代表：  </p>
+<ol>
+<li><strong>初始變數 (Initialization)</strong> ：設定迴圈開始時的初始條件，通常用來宣告或初始化控制變數，例如 <code>int i = 0</code>。  </li>
+<li><strong>判斷式 (Condition)</strong> ：每次迴圈執行前檢查的條件，若為 <code>true</code> 則繼續執行，為 <code>false</code> 則結束迴圈。  </li>
+<li><strong>遞增式 (Update)</strong> ：在每次迴圈執行完後，對控制變數進行更新操作，例如 <code>i++</code> 或 <code>i += 2</code>。</li>
+</ol>
+<p>範例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i); <span class="comment">// 輸出：0 1 2 3 4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>初始變數：<code>int i = 0</code> (設定起始值為 0)。  </li>
+<li>判斷式：<code>i &lt; 5</code> (當 <code>i</code> 小於 5 時執行迴圈)。  </li>
+<li>遞增式：<code>i++</code> (每次迴圈結束後將 <code>i</code> 增加 1)。</li>
+</ul>
+<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><p><code>while</code> 迴圈的基本語法：  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (條件式) &#123;</span><br><span class="line">    <span class="comment">// 執行內容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><ol>
+<li><strong>條件式</strong>：在每次執行迴圈前檢查，當條件為 <code>true</code> 時執行迴圈，為 <code>false</code> 則結束。</li>
+<li><strong>執行內容</strong>：條件成立時執行的程式碼。</li>
+</ol>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i); <span class="comment">// 輸出：0 1 2 3 4</span></span><br><span class="line">    i++; <span class="comment">// 遞增控制變數</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始值 <code>i = 0</code> 在迴圈外設定。</li>
+<li>每次檢查 <code>i &lt; 5</code>，滿足條件則執行。</li>
+<li><code>i++</code> 更新變數以避免無限迴圈。(因為如果不更新變數，輸出的內容會一直是<code>0</code>，就無法達成<code>i &lt; 5</code>這個條件，就會形成無限迴圈)</li>
+</ul>
+<h2 id="break跟continue"><a href="#break跟continue" class="headerlink" title="break跟continue"></a>break跟continue</h2><h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p><code>break</code>可以在迴圈達成某項條件時結束(跳出)這個回圈。</p>
+<p>例如在<code>while</code>回圈，我想要在回圈數到5的時候結束:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123; <span class="comment">// 這裡使用無限迴圈</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">        i++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>; <span class="comment">// 當 i 等於 5 時，跳出迴圈</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;迴圈結束\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這個程式會顯示這些內容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">迴圈結束</span><br></pre></td></tr></table></figure>
+<p>當<code>i</code>等於<code>5</code>時，<code>break</code>語句會跳出<code>while</code>迴圈，程式繼續執行迴圈後的程式碼。</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p><code>continue</code> 可以在迴圈達成某項條件時跳過當前迴圈的剩餘部分，直接進入下一次迴圈。<br>例如在 <code>for</code> 迴圈中，我想要跳過數值為 3 的迴圈：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span>; <span class="comment">// 當 i 等於 3 時，跳過本次迴圈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;迴圈結束\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這個程式會顯示這些內容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">4</span><br><span class="line">迴圈結束</span><br></pre></td></tr></table></figure>
+<p>當<code>i</code>等於<code>3</code>時，<code>continue</code>語句會跳過本次迴圈的剩餘部分，直接進入下一次迴圈，程式繼續執行後面的迴圈。</p>
+<h1 id="陣列"><a href="#陣列" class="headerlink" title="陣列"></a>陣列</h1><p>陣列是一種資料結構，用來儲存多個相同型別的變數，並且可以通過索引來訪問每個元素。<br>要建立陣列，要定義資料類型和設定陣列名稱，然後在後面加一個<code>[]</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> number[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>陣列的排列是從<code>0</code>開始的，不是從<code>1</code>開始。<br>所以上面的<code>number[]</code>排列順序就是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> number[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="comment">//              0  1  2  3  4</span></span><br></pre></td></tr></table></figure>
+
+<p>如果需要使用陣列的某個內容，例如我想顯示陣列中的第3個數字：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> number[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, number[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果要修改陣列的內容，就要用&lt;陣列名稱[你要修改的某個內容]&gt;，例如我要修改<code>number[]</code>的第3個內容，把它從<code>4</code>改成<code>10</code>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> number[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">number[<span class="number">3</span>] = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>這樣這個陣列現在就變成<code>1, 2, 3, 10, 5</code>了。</p>
+<hr>
+<p>如果要把陣列的內容輸出出來，可以使用<code>for</code>回圈。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> number[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d, &quot;</span>, number[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多維陣列"><a href="#多維陣列" class="headerlink" title="多維陣列"></a>多維陣列</h2><p>就是在陣列裡放入其他的陣列。例如我需要一個二維陣列：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> m[<span class="number">2</span>][<span class="number">5</span>] = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;, &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>三維陣列：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> m[<span class="number">3</span>][<span class="number">5</span>] = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;, &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;, &#123;<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<p>寫得好看一些：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> m[<span class="number">3</span>][<span class="number">5</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;,</span><br><span class="line">    &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果要取用多維陣列中的某個數值，例如要顯示第2維陣列的第三個數值：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> m[<span class="number">3</span>][<span class="number">5</span>] = &#123;</span><br><span class="line">        &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;,</span><br><span class="line">        &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, m[<span class="number">1</span>][<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h1><p>函式是用來封裝一段可以重複使用的程式碼，並且可以通過呼叫函式名稱來執行這段程式碼。<br>例如我想要顯示很多次<code>10+10</code>的結果，如果不使用函式會長這樣:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用函式(在<code>main()</code>裡面輸入函式名稱+括號):</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">add</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    add();  <span class="comment">//函式呼叫</span></span><br><span class="line">    add();  <span class="comment">//函式呼叫</span></span><br><span class="line">    add();  <span class="comment">//函式呼叫</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要寫的程式碼變少了。</p>
+<h2 id="函式參數"><a href="#函式參數" class="headerlink" title="函式參數"></a>函式參數</h2><p>在函式中使用變數的目的，是讓函式能夠接收輸入值（<strong>參數</strong>），並根據這些值進行計算或操作。</p>
+<p>需要使用幾個參數，就新增幾個參數。例如我要三個參數：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">    <span class="comment">//內容....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要兩個：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="comment">//內容....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>例如，你可以讓函式 <code>add</code> 接收兩個數字作為參數，然後計算它們的和，像這樣：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義函式，接收兩個整數參數 a 和 b，並打印它們的和</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d + %d = %d\n&quot;</span>, a, b, a + b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 呼叫函式並傳遞不同的值</span></span><br><span class="line">    add(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">    add(<span class="number">5</span>, <span class="number">15</span>);</span><br><span class="line">    add(<span class="number">100</span>, <span class="number">200</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p><strong>函式參數（parameters）</strong><br>在定義函式時，括號內的變數（例如 <code>int a, int b</code>）稱為<strong>參數</strong>。它們是函式的輸入值，必須在呼叫函式時提供具體的數值。</p>
+</li>
+<li><p><strong>函式呼叫（function call）</strong><br>當你在 <code>main</code> 中呼叫 <code>add(10, 20)</code> 時，數值 <code>10</code> 和 <code>20</code> 分別賦值給 <code>a</code> 和 <code>b</code>，函式會根據這些值進行計算。</p>
+</li>
+<li><p><strong>重複使用</strong><br>現在 <code>add</code> 函式可以針對不同的輸入值計算和，不需要每次都重寫計算邏輯。</p>
+</li>
+</ol>
+<h3 id="參數回傳"><a href="#參數回傳" class="headerlink" title="參數回傳"></a>參數回傳</h3><p>有時候，你可能希望函式不直接輸出，而是將結果傳回給使用者，讓使用者決定如何使用。這時就要使用 <code>return</code>。</p>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義函式，回傳兩個整數的和</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> result1 = add(<span class="number">10</span>, <span class="number">20</span>);  <span class="comment">// 呼叫函式並接收回傳值</span></span><br><span class="line">    <span class="type">int</span> result2 = add(<span class="number">5</span>, <span class="number">15</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result 1: %d\n&quot;</span>, result1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result 2: %d\n&quot;</span>, result2);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>回傳類型 <code>int add(int a, int b)</code> 的 <code>int</code> 要根據回傳值的類型修改。例如在上面範例的 <code>add()</code> 回傳的數值會是整數，也就是 <code>int</code>，所以在設定函式時就要寫 <code>int</code>。如果回傳的值是 <code>double</code>，那就要改成 <code>double</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="title function_">add</span><span class="params">(<span class="type">double</span> a, <span class="type">double</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">double</span> result1 = add(<span class="number">10.5</span>, <span class="number">20.6</span>);</span><br><span class="line">    <span class="type">double</span> result2 = add(<span class="number">5.7</span>, <span class="number">15.8</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result 1: %f\n&quot;</span>, result1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result 2: %f\n&quot;</span>, result2);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣這個函式就可以進行小數計算。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/%E7%A8%8B%E5%BC%8F/" rel="tag"># 程式</a>
+              <a href="/tags/%E6%95%99%E5%AD%B8/" rel="tag"># 教學</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/05/Loop-current-method/" rel="prev" title="迴路電流法">
+                  <i class="fa fa-angle-left"></i> 迴路電流法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hikari</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">使用 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 製作
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+  
+  
+  <script type="text/javascript"
+    src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  
+
+</body>
+</html>
