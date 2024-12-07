@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic3.png?raw=true">
 <meta property="og:image" content="https://github.com/NoahsarkTaiwan2008/pic/blob/main/c-tutorial/pic4.png?raw=true">
 <meta property="article:published_time" content="2024-12-05T18:09:07.000Z">
-<meta property="article:modified_time" content="2024-12-07T14:42:17.541Z">
+<meta property="article:modified_time" content="2024-12-07T15:07:16.302Z">
 <meta property="article:author" content="Hikari">
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="程式">
@@ -226,7 +226,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-07 22:42:17" itemprop="dateModified" datetime="2024-12-07T22:42:17+08:00">2024-12-07</time>
+      <time title="修改時間：2024-12-07 23:07:16" itemprop="dateModified" datetime="2024-12-07T23:07:16+08:00">2024-12-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -644,6 +644,7 @@
 <p>如果要取用多維陣列中的某個數值，例如要顯示第2維陣列的第三個數值：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> m[<span class="number">3</span>][<span class="number">5</span>] = &#123;</span><br><span class="line">        &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;,</span><br><span class="line">        &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, m[<span class="number">1</span>][<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>…</p>
 <h1 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h1><p>函式是用來封裝一段可以重複使用的程式碼，並且可以通過呼叫函式名稱來執行這段程式碼。<br>例如我想要顯示很多次<code>10+10</code>的結果，如果不使用函式會長這樣:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;10 + 10 = %d\n&quot;</span>, <span class="number">10</span> + <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
