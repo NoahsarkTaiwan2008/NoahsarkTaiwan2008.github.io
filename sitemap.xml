@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://noahsarktw.com/2024/12/08/zj-a001/</loc>
+    
+    <lastmod>2024-12-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://noahsarktw.com/2024/12/06/basic-c-lang/</loc>
     
     <lastmod>2024-12-08</lastmod>
@@ -222,6 +231,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://noahsarktw.com/tags/zerojudge/</loc>
+    <lastmod>2024-12-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -254,6 +270,20 @@
   
   <url>
     <loc>https://noahsarktw.com/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/C/</loc>
+    <lastmod>2024-12-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noahsarktw.com/categories/zerojudge/</loc>
+    <lastmod>2024-12-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noahsarktw.com/categories/zerojudge/a/</loc>
     <lastmod>2024-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
